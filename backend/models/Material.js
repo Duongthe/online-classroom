@@ -1,0 +1,30 @@
+const mongoose = require('mongoose');
+
+const materialSchema = new mongoose.Schema({
+  course: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Course',
+    required: true
+  },
+  title: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  type: {
+    type: String,
+    enum: ['Slide', 'Video', 'Document', 'Link'],
+    default: 'Document'
+  },
+  url: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  description: {
+    type: String,
+    default: ''
+  }
+}, { timestamps: true });
+
+module.exports = mongoose.model('Material', materialSchema);

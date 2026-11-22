@@ -1,0 +1,13 @@
+# Bỏ qua thư mục thư viện nặng
+node_modules/
+**/node_modules/
+
+# Bỏ qua file chứa thông tin bảo mật & biến môi trường
+.env
+**/.env
+
+# Bỏ qua thư mục build & log
+dist/
+build/
+.DS_Store
+*.log
